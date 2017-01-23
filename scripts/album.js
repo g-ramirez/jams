@@ -66,3 +66,5 @@ var setCurrentAlbum = function(album) {
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+//comment to update last commit
