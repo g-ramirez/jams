@@ -64,13 +64,18 @@ var setCurrentAlbum = function(album) {
  };
  
 var findParentByClassName = function(element, targetClass) {
-    if (element) {
+    if (element.parentElement) {
         var currentParent = element.parentElement;
         while (currentParent.className != targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
         }
+        //the while loop will complete if the target class doesn't exist because of the not null condition.  so if it doesn't exist, that means currentParent MUST be null, so we can check for that
+        if (currentParent.className === null)
+          alert("No parent found with that class name");
         return currentParent;
     }
+    else 
+      alert("No Parent found");
 };
 
 
